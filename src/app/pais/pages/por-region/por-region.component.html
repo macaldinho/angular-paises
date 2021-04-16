@@ -1,0 +1,24 @@
+<div class="animate__animated animate__fadeInRight animate__faster">
+  <h3>Buscar pot region <small>{{regionActiva | titlecase}}</small> </h3>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- [class.btn-primary]="region === regionActiva"
+    [ngClass]="{'btn-primary': region===regionActiva, 'btn-outline-primary': region!== regionActiva}"
+  [class]="(region === regionActiva ? 'btn btn-primary' : 'btn btn-outline-primary')"-->
+    <button *ngFor="let region of regiones" [class]="getClaseCss(region)" (click)="activarRegion(region)">
+      {{region | titlecase}}
+    </button>
+  </div>
+</div>
+<hr>
+</div>
+
+
+
+<div *ngIf="paises.length>0" class="row">
+  <div class="col">
+    <app-pais-tabla [paises]="paises"></app-pais-tabla>
+  </div>
+</div>
